@@ -36,7 +36,7 @@
 
 		methods:{
 			date(date){
-				return dateFormat(date, "mmmm dS, yyyy");
+				return dateFormat(date, "UTC:mmmm dS, yyyy");
 			}
 		}
 	}
