@@ -9,12 +9,40 @@
 					</div>
 					<p class="my-8 text-2xl">site coming soon</p>
 					<a class="bg-gray-800 px-5 py-3 text-sm shadow-sm font-medium tracking-wider text-gray-50 rounded-full hover:shadow-lg" href="https://discord.com/channels/830116083594952735/854164136932671502/870696629274038283"> Join Discord Community </a>
+
+					<MeetSchedule :data="data"/>
+
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
+<script>
+export default {
+
+	async asyncData({ $axios }) {
+		
+		let data = {}
+
+		try{
+			
+			const filterData = { 
+				filter: { property: "Status", select: { equals: "Published" } },
+				sorts: [ { property: "Day", direction: "ascending" }]
+			}
+			
+			data = await $axios.$post('databases/d9f93215943f4d6ea9e73ab3af2f569c/query', filterData)
+
+		}catch(err){
+			
+		}
+
+		return { data }
+	}
+
+}
+</script>
 
 
 <style>
