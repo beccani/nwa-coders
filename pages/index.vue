@@ -1,8 +1,7 @@
 <template>
-	<div class="flex items-center justify-center min-h-screen bg-white bg-fixed bg-cover bg-bottom ">
-		<div class="container">
+		<div class="container mx-auto mt-12">
 			<div class="row">
-				<div class="col-sm-8 offset-sm-2 text-gray-700 text-center -mt-52">
+				<div class="col-sm-8 offset-sm-2 text-gray-700 text-center ">
 					<div class="relative mb-8">
 						<h1 class="relative text-6xl md:text-9xl text-shadow font-sans font-bold">
 						<span>N</span><span>W</span><span>A</span><br><span>C</span><span>O</span><span>D</span><span>E</span><span>R</span><span>S</span></h1>
@@ -15,7 +14,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </template>
 
 <script>
