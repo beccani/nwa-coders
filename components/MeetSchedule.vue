@@ -33,14 +33,10 @@
 
 		methods:{
 			date(date){
-
 				if(new Date().getDate().toString() === dateFormat(date, "UTC:d")) return "Today"
 				return dateFormat(date, "UTC:mmmm dS, yyyy");
 			},
 			getDate(date){
-
-				console.log(new Date().getDate() +' '+ dateFormat(date, "UTC:d"))
-				console.log(new Date().getDate().toString() === dateFormat(date, "UTC:d"))
 				return new Date().getDate().toString() === dateFormat(date, "UTC:d");
 			}
 		}
