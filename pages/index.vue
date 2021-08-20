@@ -8,9 +8,8 @@
 						</h1>
 					</div>
 					<p class="my-8 text-2xl">site coming soon</p>
-					<a class="bg-gray-800 px-5 py-3 text-sm shadow-sm font-medium tracking-wider text-gray-50 rounded-full hover:shadow-lg" href="https://discord.com/channels/830116083594952735/854164136932671502/870696629274038283"> Join Discord Community </a>
+					<a class="bg-gray-800 px-5 py-3 text-sm shadow-sm font-medium tracking-wider text-gray-50 rounded-full hover:shadow-lg" href="https://discord.gg/cjGQR9Rq8F"> Join Discord Community </a>
 					<MeetSchedule :data="data"/>
-					
 				</div>
 			</div>
 		</div>
