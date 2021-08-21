@@ -10,6 +10,8 @@
 					<p class="my-8 text-2xl">site coming soon</p>
 					<a class="bg-gray-800 px-5 py-3 text-sm shadow-sm font-medium tracking-wider text-gray-50 rounded-full hover:shadow-lg" href="https://discord.gg/cjGQR9Rq8F"> Join Discord Community </a>
 					<MeetSchedule :data="data"/>
+
+					<a href="/speakers" class=" block text-2xl my-12 text-white bg-black w-max p-4 mx-auto">View Past Speakers</a>
 				</div>
 			</div>
 		</div>
@@ -30,18 +32,12 @@
 			
 			let data = {}
 
-			try{
-				
-				const filterData = { 
-					filter: { property: "Status", select: { equals: "Published" } },
-					sorts: [ { property: "Day", direction: "ascending" }]
-				}
-				
-				data = await $axios.$post('databases/d9f93215943f4d6ea9e73ab3af2f569c/query', filterData)
-
-			}catch(err){
-				
+			const filterData = { 
+				filter: { property: "Status", select: { equals: "Published" } },
+				sorts: [ { property: "Day", direction: "ascending" }]
 			}
+			
+			data = await $axios.$post('databases/d9f93215943f4d6ea9e73ab3af2f569c/query', filterData)
 
 			return { data }
 		}

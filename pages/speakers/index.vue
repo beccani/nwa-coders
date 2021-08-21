@@ -1,0 +1,27 @@
+<template>
+	<div class="container mx-auto mt-12">
+		<div>
+			<h1 class="text-center text-4xl my-12 uppercase">Guest Speakers</h1>
+		</div>
+		 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+			<SpeakerCard v-for="item in pages" :key="item.id" :speaker="item"/>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		async asyncData({ $axios, params }) {
+			
+			let pages = {}
+
+			const filterData = { 
+				filter: { property: "Status", select: { equals: "Published" } }
+			}
+			
+			pages = await $axios.$post('databases/815035805b6d4a53ab7a74c81ee7fa0b/query', filterData)
+		
+			return { pages: pages.results,  }
+		}
+	}
+</script>

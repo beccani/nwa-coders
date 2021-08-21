@@ -16,3 +16,18 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+
+### Setup Env
+
+```bash
+$ cp .env.example .env
+
+```
+
+
+```
+NODE_ENV="" # Set to dev locally and prod in production
+BASE_URL="" # notion api base url
+NOTION_AUTH="" # notion api auth Bearer token
+```
+
