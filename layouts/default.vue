@@ -1,6 +1,6 @@
 <template>
-	<div>
+	<div class="font-montserrat">
 		<Navigation/>
-		<Nuxt />
+		<Nuxt class="px-4 md:px-0" />
 	</div>
 </template>
