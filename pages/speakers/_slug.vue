@@ -26,7 +26,6 @@
 
 				<br v-else-if="item.type == 'paragraph' && item.paragraph.text.length == 0" :key="item.id" />
 					
-
 				<li :key="item.id" v-if="item.type == 'bulleted_list_item'"
 				class="pl-4 leading-relaxed">
 					{{ item.bulleted_list_item.text[0].plain_text }}
@@ -36,32 +35,13 @@
 		</div>
 		
 		<div class="my-4" v-if="tabs[1].current">
-			Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Facilis totam nobis fugiat delectus officiis harum illo, consequuntur et, qui laboriosam molestias voluptates odit iure soluta exercitationem corporis ipsam repellat consectetur?
-
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam fugiat aut debitis, autem vero temporibus minus delectus voluptas veritatis? Ea possimus voluptates totam culpa perspiciatis? Laudantium beatae culpa provident nulla!
+			
 		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-
-		data(){
-			return {
-				tabs: [
-					  { name: 'Notes', href: '#', current: true },
-					  { name: 'Resources', href: '#', current: false },
-					]
-			}
-		},
-
-		methods: {
-			selectTab (i) {
-				this.tabs.forEach((tab, index) => {
-				tab.current = (index === i)
-				})
-			}
-		},
 
 		async asyncData({ $axios, params }) {
 			
@@ -82,6 +62,22 @@
 			content = await $axios.$get(`blocks/${page.results[0].id}/children`)
 		
 			return { page: page.results[0], content: content.results }
-		}
+		},
+		data(){
+			return {
+				tabs: [
+					  { name: 'Notes', href: '#', current: true },
+					  { name: 'Resources', href: '#', current: false },
+					]
+			}
+		},
+
+		methods: {
+			selectTab (i) {
+				this.tabs.forEach((tab, index) => {
+				tab.current = (index === i)
+				})
+			}
+		},
 	}
 </script>
